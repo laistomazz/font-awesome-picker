@@ -42,7 +42,7 @@ Instance as a custom element:
 Import style
 
 ```sass
-@import 'node_modules/font-awesome-picker/dist/font-awesome-picker.css';
+@import 'node_modules/font-awesome-picker/dist/font-awesome-picker';
 ```
 # Options
 
