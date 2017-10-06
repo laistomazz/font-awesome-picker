@@ -1,6 +1,6 @@
 {
   "name": "font-awesome-picker",
-  "description": "A Vue.js Plugin",
+  "description": "A Vue.js Plugin to easily pick a FontAwesome icon and use it as you wish!",
   "version": "1.0.2",
   "author": {
     "name": "Laís Tomaz",
