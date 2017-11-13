@@ -1,6 +1,6 @@
 # fontAwesomePicker
 
-[![npm](https://img.shields.io/npm/v/font-awesome-picker.svg) ![npm](https://img.shields.io/npm/dm/font-awesome-picker.svg)](https://www.npmjs.com/package/fontawesomepicker)
+[![npm](https://img.shields.io/npm/v/font-awesome-picker.svg) ![npm](https://img.shields.io/npm/dm/font-awesome-picker.svg)](https://www.npmjs.com/package/font-awesome-picker)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 A Vue.js component to easily pick a FontAwesome icon and use it as you wish.
