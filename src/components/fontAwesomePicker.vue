@@ -28,7 +28,6 @@ export default {
 	data () {
 		return {
 			selected: '',
-			iconContent: '',
 			icons,
 		};
 	},
