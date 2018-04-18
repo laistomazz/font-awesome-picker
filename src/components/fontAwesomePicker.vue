@@ -7,12 +7,12 @@
 			<div class="iconPicker__icons">
 				<a
 					href="#"
-					@click.stop.prevent="getIcon(icon)"
-					:class="`item ${selected === icon ? 'selected' : ''}`"
+					@click.stop.prevent="getIcon(icon.value, icon.name)"
+					:class="`item ${selected === icon.name ? 'selected' : ''}`"
 					v-for="icon in icons"
-					:key="icon"
+					:key="icon.value"
 				>
-					<i :class="'fa '+icon"></i>
+					<i :class="'fas fa-'+icon.name"></i>
 				</a>
 			</div>
 		</div>
@@ -37,15 +37,11 @@ export default {
 		},
 	},
 	methods: {
-		getIcon (icon) {
-			this.selected = icon;
-			this.getContent(this.selected);
-		},
-		getContent (icon) {
-			const iconContent = window
-				.getComputedStyle(document.querySelector(`.fa.${icon}`), ':before')
-				.getPropertyValue('content');
-			this.convert(iconContent);
+		getIcon (icon, key) {
+			this.selected = key;
+			// NEED TO FIX CONVERT METHOD
+			// this.convert(icon);
+			this.selectIcon(icon.toUpperCase());
 		},
 		convert (value) {
 			const newValue = value
@@ -58,8 +54,6 @@ export default {
 			while (hexValue.length < 4) {
 				hexValue = `0${hexValue}`;
 			}
-
-			this.selectIcon(hexValue.toUpperCase());
 		},
 		selectIcon (value) {
 			const result = {
@@ -75,8 +69,10 @@ export default {
 			if (search.length > 3) {
 				filter = icons.filter((item) => {
 					const regex = new RegExp(search, 'gi');
-					return item.match(regex);
+					return item.name.match(regex);
 				});
+			} else if (search.length === 0){
+				this.icons = icons;
 			}
 
 			if (filter.length > 0) {
