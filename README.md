@@ -41,7 +41,7 @@ Instance as a custom element:
 <font-awesome-picker></font-awesome-picker>
 ```
 
-Import style
+If you're not using Webpack, import style:
 
 ```sass
 @import 'node_modules/font-awesome-picker/dist/font-awesome-picker';
@@ -62,6 +62,12 @@ To get the result from the fontAwesomePicker
 
 ```html
 <font-awesome-picker v-on:selectIcon="yourFunction"></font-awesome-picker>
+```
+
+```javascript
+    yourFunction(selectedIcon) {
+        console.log('selected', selectedIcon)
+    }
 ```
 
 It will emit an object as a result:
