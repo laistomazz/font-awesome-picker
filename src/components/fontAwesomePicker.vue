@@ -7,12 +7,12 @@
 			<div class="iconPicker__icons">
 				<a
 					href="#"
-					@click.stop.prevent="getIcon($event)"
-					class="item"
+					@click.stop.prevent="getIcon(icon)"
+					:class="`item ${selected === icon ? 'selected' : ''}`"
 					v-for="icon in icons"
 					:key="icon"
 				>
-					<i :class="'fa '+icon" :data-type="icon"></i>
+					<i :class="'fa '+icon"></i>
 				</a>
 			</div>
 		</div>
@@ -38,24 +38,8 @@ export default {
 		},
 	},
 	methods: {
-		cleanIcons () {
-			const iconsSelected = Array.from(document.querySelectorAll('.iconPicker__icons .selected'));
-			iconsSelected.map((icon) => {
-				icon.classList.remove('selected');
-			});
-		},
-		getIcon (event) {
-			const clickTarget = event.target;
-
-			this.cleanIcons();
-
-			if (clickTarget.classList.contains('item')) {
-				this.selected = clickTarget.querySelector('i').getAttribute('data-type');
-				clickTarget.classList.add('selected');
-			} else {
-				this.selected = clickTarget.getAttribute('data-type');
-				clickTarget.parentNode.classList.add('selected');
-			}
+		getIcon (icon) {
+			this.selected = icon;
 			this.getContent(this.selected);
 		},
 		getContent (icon) {
