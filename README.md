@@ -22,6 +22,8 @@ npm install --save font-awesome-picker
 
 # Usage
 
+Make sure you are already using FontAwesome > 5 with *SVG with JavaScript*(https://fontawesome.com/get-started) option.
+
 Install the component:
 
 ```javascript
