@@ -1,3 +1,18 @@
+<template>
+	<div id="iconPicker">
+		<div class="iconPicker__header">
+			<input type="text" :placeholder="searchPlaceholder" @keyup="filterIcons($event)">
+		</div>
+		<div class="iconPicker__body">
+			<div class="iconPicker__icons">
+				<a href="#" @click.stop.prevent="getIcon($event)" class="item" v-for="icon in icons">
+					<i :class="'fa '+icon" :data-type="icon"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</template>
+
 <script>
 import icons from './icons';
 
@@ -82,19 +97,6 @@ export default {
 	},
 };
 </script>
-
-<template>
-	<div id="iconPicker">
-		<div class="iconPicker__header">
-			<input type="text" :placeholder="searchPlaceholder" @keyup="filterIcons($event)">
-		</div>
-		<div class="iconPicker__body">
-			<div class="iconPicker__icons">
-				<a href="#" @click.stop.prevent="getIcon($event)" class="item" v-for="icon in icons"><i :class="'fa '+icon" :data-type="icon"></i></a>
-			</div>
-		</div>
-	</div>
-</template>
 
 <style>
 	#iconPicker {
