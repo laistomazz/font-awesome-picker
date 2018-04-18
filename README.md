@@ -12,6 +12,7 @@ A Vue.js component to easily pick a FontAwesome icon and use it as you wish.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Options](#options)
+- [Support for FontAwesome 4](#support)
 
 # Installation
 
@@ -65,9 +66,13 @@ To get the result from the fontAwesomePicker
 ```
 
 ```javascript
-    yourFunction(selectedIcon) {
-        console.log('selected', selectedIcon)
-    }
+{
+    methods: {
+        yourFunction(selectedIcon) {
+            console.log('selected', selectedIcon)
+        },
+    },
+}
 ```
 
 It will emit an object as a result:
@@ -77,6 +82,12 @@ It will emit an object as a result:
     className: 'fa-home',
     cssValue: 'F015',
 }
+```
+## Support
+To support version 4 or less of FontAwesome, please use version 1.1.6
+
+```
+npm install --save font-awesome-picker@1.1.6
 ```
 
 [MIT](http://opensource.org/licenses/MIT)
