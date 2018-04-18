@@ -5,7 +5,13 @@
 		</div>
 		<div class="iconPicker__body">
 			<div class="iconPicker__icons">
-				<a href="#" @click.stop.prevent="getIcon($event)" class="item" v-for="icon in icons">
+				<a
+					href="#"
+					@click.stop.prevent="getIcon($event)"
+					class="item"
+					v-for="icon in icons"
+					:key="icon"
+				>
 					<i :class="'fa '+icon" :data-type="icon"></i>
 				</a>
 			</div>
