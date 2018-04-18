@@ -71,7 +71,7 @@ export default {
 					const regex = new RegExp(search, 'gi');
 					return item.name.match(regex);
 				});
-			} else if (search.length === 0){
+			} else if (search.length === 0) {
 				this.icons = icons;
 			}
 
