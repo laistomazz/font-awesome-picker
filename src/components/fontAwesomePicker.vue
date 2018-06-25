@@ -12,7 +12,7 @@
 					v-for="icon in icons"
 					:key="icon.value"
 				>
-					<i :class="'fas fa-'+icon.name"></i>
+					<i :class="icon.name"></i>
 				</a>
 			</div>
 		</div>
