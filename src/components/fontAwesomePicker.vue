@@ -10,9 +10,9 @@
 					@click.stop.prevent="getIcon(icon.value, icon.name)"
 					:class="`item ${selected === icon.name ? 'selected' : ''}`"
 					v-for="icon in icons"
-					:key="icon.value"
+					:key="icon.name"
 				>
-					<i :class="'fas fa-'+icon.name"></i>
+					<i :class="icon.name"></i>
 				</a>
 			</div>
 		</div>
